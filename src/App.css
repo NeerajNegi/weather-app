@@ -1,38 +1,107 @@
-.App {
-  text-align: center;
+.container {
+  display: grid;
+  grid-template-columns: 0.6fr 0.4fr;
+  height: 100vh;
+  width: 100vw;
+
+  background-image: url('https://images.unsplash.com/photo-1501999635878-71cb5379c2d8?ixlib=rb-1.2.1&auto=format&fit=crop&w=3578&q=80');
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+/* Weather Overview Component Starts*/
+.weather-overview-container {
+  position: relative;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.temperature-overview-container {
+  display: flex;
+  position: absolute;
+  bottom: 10%;
+  left: 10%;
+  align-items: center;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.main-temperature {
+  font-size: 8rem;
 }
+
+.city-time-container {
+  margin-left: 2rem;
+}
+
+.city-time-container h4 {
+  font-size: 4rem;
+  padding: 0px;
+  margin: 0px;
+}
+
+.city-time-container p {
+  font-size: 1.5rem;
+}
+
+/* Weather Overview Ends */
+
+/* Weather Details Starts */
+
+.weather-details-container {
+  margin-top: 100px;
+  text-shadow: 2px 2px black;
+  height: 100%;
+}
+
+.weather-details {
+  width: 100%;
+  padding: 2rem 2rem; 
+  color: white;
+}
+
+.weather-details h1 {
+  margin-bottom: 4rem;
+}
+
+.item {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  margin-bottom: 3rem;
+}
+
+.item h4 {
+  font-size: 1.5rem;
+  text-align: center;
+}
+
+.item p {
+  font-size: 2rem;
+}
+
+/* Weather Details End */
+
+/* Search Box Starts */
+
+.search-btn {
+  position: absolute;
+  top: 0;
+  right: 0;
+  border: none;
+  width: 100px;
+  height: 100px;
+  background: #8EC7D8;
+  cursor: pointer;
+}
+
+.search-btn img {
+  height: 50px;
+}
+
+input {
+  background-color: transparent;
+  border: none;
+  border-bottom: 1px solid white;
+  font-size: 3rem;
+  height: 100px;
+  color: white;
+}
+
+/* Serach Box Ends */
