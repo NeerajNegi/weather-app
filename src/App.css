@@ -9,6 +9,16 @@
   background-repeat: no-repeat;
 }
 
+.details-container {
+  background: rgba(199, 197, 197, 0.21);
+  backdrop-filter: blur(20px);
+}
+
+.icon {
+  vertical-align: middle;
+  margin-left: -10px;
+}
+
 /* Weather Overview Component Starts*/
 .weather-overview-container {
   position: relative;
@@ -41,24 +51,27 @@
   font-size: 1.5rem;
 }
 
+
 /* Weather Overview Ends */
 
 /* Weather Details Starts */
 
 .weather-details-container {
-  margin-top: 100px;
-  text-shadow: 2px 2px black;
   height: 100%;
 }
 
 .weather-details {
-  width: 100%;
-  padding: 2rem 2rem; 
+  width: 90%;
+  margin: 2rem 2rem; 
   color: white;
+  border-bottom: 1px solid white;
+  border-top: 1px solid white;
+
 }
 
 .weather-details h1 {
   margin-bottom: 4rem;
+  margin-top: 5rem;
 }
 
 .item {
@@ -74,11 +87,20 @@
 
 .item p {
   font-size: 2rem;
+  color: #d8d8d8;
+}
+
+.item:last-child {
+  margin-bottom: 5rem;
 }
 
 /* Weather Details End */
 
 /* Search Box Starts */
+
+.search-container {
+  height: 200px;
+}
 
 .search-btn {
   position: absolute;
@@ -102,6 +124,9 @@ input {
   font-size: 3rem;
   height: 100px;
   color: white;
+  margin-left: 2rem;
+  width: 60%;
+  outline: none;
 }
 
 /* Serach Box Ends */
