@@ -55,10 +55,6 @@
 
 /* Weather Details Starts */
 
-.weather-details-container {
-  height: 100%;
-}
-
 .weather-details {
   width: 90%;
   margin: 2rem 2rem; 
