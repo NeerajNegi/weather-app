@@ -3,14 +3,13 @@
   grid-template-columns: 0.6fr 0.4fr;
   height: 100vh;
   width: 100vw;
-
-  background-image: url('https://images.unsplash.com/photo-1501999635878-71cb5379c2d8?ixlib=rb-1.2.1&auto=format&fit=crop&w=3578&q=80');
+  transition: background 0.5s ease;
   background-position: center;
   background-repeat: no-repeat;
 }
 
 .details-container {
-  background: rgba(199, 197, 197, 0.21);
+  background: rgba(0, 0, 0, 0.21);
   backdrop-filter: blur(20px);
 }
 
@@ -87,7 +86,6 @@
 
 .item p {
   font-size: 2rem;
-  color: #d8d8d8;
 }
 
 .item:last-child {
@@ -111,6 +109,7 @@
   height: 100px;
   background: #8EC7D8;
   cursor: pointer;
+  transition: background 1s ease;
 }
 
 .search-btn img {

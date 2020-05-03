@@ -22,7 +22,9 @@ export default class App extends React.Component {
         humidity: 0,
         temp: 0,
       },
-      loading: false
+      loading: false,
+      backgroundImageUrl: 'https://images.unsplash.com/photo-1541119638723-c51cbe2262aa?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2552&q=80',
+      buttonBgColor: '#59BEF7'
     }
   }
 
@@ -37,6 +39,8 @@ export default class App extends React.Component {
       weatherDetails: { ...weatherData.weatherDetails },
       weatherType: weatherData.weatherType
     });
+
+    this.setColorTheme();
   }
 
   search = (city) => {
@@ -59,7 +63,6 @@ export default class App extends React.Component {
           }
         }
         this.setWeatherData(weatherData);
-        console.log(this.state);
         this.setState({loading: false});
       })
       .catch(error => {
@@ -68,44 +71,53 @@ export default class App extends React.Component {
       });
   }
   
-  getBackgroundImage = () => {
-    let url;
-
+  setColorTheme = () => {
+    let backgroundImageUrl;
+    let buttonBgColor;
     switch(this.state.weatherType) {
       case 'Clear':
-        url = 'https://images.unsplash.com/photo-1541119638723-c51cbe2262aa?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2552&q=80';
+        backgroundImageUrl = 'https://images.unsplash.com/photo-1541119638723-c51cbe2262aa?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2552&q=80';
+        buttonBgColor = '#59BEF7'
         break;
       case 'Clouds':
-        url = 'https://images.unsplash.com/photo-1557413603-d39c9484a980?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2838&q=80';
+        backgroundImageUrl = 'https://images.unsplash.com/photo-1557413603-d39c9484a980?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2838&q=80';
+        buttonBgColor = '#f0f1f3'
         break;
       case 'Atmosphere':
-        url = 'https://images.unsplash.com/photo-1528322992281-3566f32b5837?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2550&q=80';
+        backgroundImageUrl = 'https://images.unsplash.com/photo-1528322992281-3566f32b5837?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2550&q=80';
+        buttonBgColor = '#81828b'
         break;
       case 'Thunderstorm':
-        url = 'https://images.unsplash.com/photo-1561485132-59468cd0b553?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2148&q=80';
+        backgroundImageUrl = 'https://images.unsplash.com/photo-1561485132-59468cd0b553?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2148&q=80';
+        buttonBgColor = '#415dd7'
         break;
       case 'Drizzle':
-        url = 'https://images.unsplash.com/photo-1522546462854-d08e99422525?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2555&q=80';
+        backgroundImageUrl = 'https://images.unsplash.com/photo-1522546462854-d08e99422525?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2555&q=80';
+        buttonBgColor = '#a99749'
         break;
       case 'Rain':
-        url = 'https://images.unsplash.com/photo-1438449805896-28a666819a20?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2550&q=80';
+        backgroundImageUrl = 'https://images.unsplash.com/photo-1438449805896-28a666819a20?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2550&q=80';
+        buttonBgColor = '#43707d'
         break;
       case 'Snow':
-        url = 'https://images.unsplash.com/photo-1513002066671-74ea5914a6a5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2550&q=80';
+        backgroundImageUrl = 'https://images.unsplash.com/photo-1513002066671-74ea5914a6a5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2550&q=80';
+        buttonBgColor = '#abaab0'
         break;
       default:
-        url = 'https://images.unsplash.com/photo-1541119638723-c51cbe2262aa?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2552&q=80';
+        backgroundImageUrl = 'https://images.unsplash.com/photo-1541119638723-c51cbe2262aa?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2552&q=80';
+        buttonBgColor = '#59BEF7'
     }
-    return {
-      backgroundImage: `url(${url})`
-    }
+    this.setState({
+      backgroundImageUrl,
+      buttonBgColor
+    });
   }
 
 
   render() {
-    const {city, time, weatherDetails, loading, weatherType} = this.state;
+    const {city, time, weatherDetails, loading, weatherType, backgroundImageUrl, buttonBgColor} = this.state;
     return (
-      <div className="container" style={ this.getBackgroundImage() }>
+      <div className="container" style={{ backgroundImage: `url(${backgroundImageUrl})` }}>
         <WeatherOverview 
           city={city}
           time={time}
@@ -115,6 +127,7 @@ export default class App extends React.Component {
           <SearchBox 
             loading={loading}
             city={city}
+            buttonBgColor={buttonBgColor}
             search={this.search}/>
           <WeatherDetails 
             weatherDetails={weatherDetails}/>
